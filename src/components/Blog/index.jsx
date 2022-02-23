@@ -1,48 +1,25 @@
 import styles from './styles.module.css'
-import Post from '../Post'
+import SinglePost from '../SinglePost'
 import { useState, useEffect } from 'react'
-import { useQuery, createClient } from 'urql'
-
-
-
-const query = `
-query Posts {
-  posts(orderBy: createdAt_DESC) {
-    id
-    slug
-    title
-    coverImage {
-      url
-    }
-    content {
-      html
-    }
-  }
-}`;
-
-
+import getPosts from '../../services/getPosts'
 
 export default function Blog(){
 
   const [posts, setPosts] = useState([]);
 
-  const [result] = useQuery({query})
-
-  const { data, fetching, error} = result;
-
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no... {error.message}</p>;
+  getPosts().then((result)=>{
+    setPosts(result.posts);
+  })
 
     return(
-        <div className={styles.blogContainer}>
+        <div className={styles.blogContainer} id="blog">
             <h2>
-                Últimas postagens
+                Lastest posts
             </h2>
 
-            {data.posts.map((post)=>{
-              return (<Post data={post} key={post.id}/>)
-            })}
-            
+            {posts.map((post)=>{
+              return (<SinglePost data={post} key={post.id} isSInglePage={false}/>)
+            })}            
         </div>
 
     )

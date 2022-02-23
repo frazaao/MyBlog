@@ -15,7 +15,10 @@
     color: #fff;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: var(--dark);
-
 }

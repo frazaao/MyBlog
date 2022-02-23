@@ -31,9 +31,26 @@
     margin: 36px auto 0;
     padding: 0 36px;
     line-height:1.5;
-    white-space: nowrap;
+}
+
+.textContainer{
+    position: relative;
+}
+
+.textContainer:after{
+    content: '';
+    height: 40px;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    position: absolute;
+    bottom: 0;
+}
+
+.textContent{
     overflow: hidden;
-    text-overflow: ellipsis;
+    min-height: 80px;
+    max-height: 100px;
 }
 
 .postContent p a{
@@ -57,7 +74,11 @@
 
 .callButton a:hover{
     transform: translateY(-5px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+}
+
+.disabled{
+    display: none;
 }
 
 @media (max-width: 750px){
