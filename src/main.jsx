@@ -8,7 +8,7 @@ import { client } from './services/api'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import getPosts from './services/getPosts'
 
-const query = await getPosts()
+const query = getPosts()
 
 ReactDOM.render(
   <React.StrictMode>
