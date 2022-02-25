@@ -18,6 +18,10 @@
     margin: 15px 0;
 }
 
+.headerContent h1 span{
+    color: var(--primary);
+}
+
 .navContainer{
     display: flex;
     gap: 50px;
@@ -54,6 +58,10 @@
         background: #333;
 
         transition: all .3s ease-in-out;
+    }
+
+    .headerContent h1{
+        font-size: 2.5rem;
     }
 
     .navContainer.active{

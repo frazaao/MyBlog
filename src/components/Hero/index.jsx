@@ -7,7 +7,7 @@ export default function Hero(){
             <div className={styles.heroContainer}>
                 <div className={styles.heroContent}>
                     <h2>
-                        <span>MyBlog</span> is you <br />perfect place to <span>know</span>
+                        <span>GeekPlace</span> is your <br />perfect place to <span>know</span>
                     </h2>
                     <p>
                         about news in <span>Geek World</span>

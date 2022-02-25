@@ -15,7 +15,7 @@ export default function Header(){
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <Link to='/'><h1>MyBlog</h1></Link>
+        <Link to='/'><h1><span>Geek</span>Place</h1></Link>
         <nav className={styles.navigation}>
           <button onClick={toggleActive}>{isActive? <CgClose /> : <FaBars /> }</button>
           <ul className={ isActive ? styles.navContainer + ' ' +  styles.active : styles.navContainer}>
