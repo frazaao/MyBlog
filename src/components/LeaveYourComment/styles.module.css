@@ -1,0 +1,93 @@
+.CommentSession{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    margin: 64px auto 32px;
+}
+
+.profileContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileContent > img{
+    max-width: 100%;
+    display: block;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+}
+
+.LeaveYourCommentContainer{
+    flex: 1;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    text-align: center;
+}
+
+.LeaveYourCommentContainer textarea{
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: inherit;
+
+    height: 100px;
+    padding: 15px;
+    margin: 5px 0;
+    resize: none;
+}
+
+.LeaveYourCommentContainer textarea:focus{
+    border-color: var(--primary);
+}
+
+.LeaveYourCommentContainer > div{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: inherit;
+
+    height: 100px;
+    padding: 15px;
+    margin: 5px 0;
+    resize: none;
+}
+
+.LeaveYourCommentContainer a{
+    cursor: pointer;
+}
+
+.LeaveYourCommentContainer button{
+    border-radius: 8px;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white);
+    background: var(--primary);
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+}
+
+.LeaveYourCommentContainer button:hover{
+    filter: brightness(0.9);
+}
+
+.LeaveYourCommentContainer button:disabled{
+    cursor: not-allowed;
+}
+
+.LeaveYourCommentContainer button:disabled:hover{
+    background: var(--grey);
+}

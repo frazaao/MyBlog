@@ -8,7 +8,7 @@
     padding-top: 100px;
 }
 
-.postContent img{
+.postContent > img{
     display: block;
     width: 90%;
     aspect-ratio: 16 / 9;
@@ -86,7 +86,7 @@
         font-size: 1rem;
     }
 
-    .postContent p{
+    .postContent > p{
         max-width: 100%;
         padding: 0 24px;
         font-size: 0.75rem;

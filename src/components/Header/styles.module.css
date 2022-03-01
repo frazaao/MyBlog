@@ -1,6 +1,5 @@
 .headerContainer{
     width: 100%;
-    padding: 10px 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -14,8 +13,9 @@
 }
 
 .headerContent h1{
-    font-size: 3rem;
-    margin: 15px 0;
+    font-size: 2.5rem;
+    margin: 5px 0;
+    color: var(--white);
 }
 
 .headerContent h1 span{
@@ -24,10 +24,11 @@
 
 .navContainer{
     display: flex;
+    align-items: center;
     gap: 50px;
 }
 
-.headerContent button{
+.navigation > button{
     display:none
 }
 
@@ -36,6 +37,7 @@
     padding: 10px 20px;
     border-radius: 4px;
     font-weight: 600;
+    color: var(--white);
 
     transition: all .2s ease-in-out;
 }
@@ -68,8 +70,9 @@
         top: 0;
     }
 
-    .headerContent button{
-        display: block;
+    .navigation > button{
+        display: flex;
+        margin: 10px;
         background: none;
         border: none;
         font-size: 2rem;

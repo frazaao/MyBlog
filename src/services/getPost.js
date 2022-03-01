@@ -8,6 +8,7 @@ export default async function getPost(slug){
         id
         slug
         title
+        createdAt
         coverImage {
           url
         }
@@ -17,6 +18,9 @@ export default async function getPost(slug){
         author {
           id
           name
+          picture {
+            url
+          }
         }
       }
     }`;

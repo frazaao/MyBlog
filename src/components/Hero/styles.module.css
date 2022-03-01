@@ -21,6 +21,7 @@
 .heroContent h2{
     text-align: center;
     font-size: 3.75rem;
+    color: var(--white);
 }
 
 .heroContent p{
@@ -28,6 +29,7 @@
     font-size: 2rem;
     margin-top: 1rem;
     font-weight: bold;
+    color: var(--white);
 }
 
 .heroContent h2 span, .heroContent p span{
