@@ -1,22 +1,17 @@
 import { useAuth0 } from "@auth0/auth0-react"
-import { useState, useEffect } from 'react';
-import createCommentary from '../../services/createCommentary'
-import getCommentaries from '../../services/getCommentaries'
+import { useState, useContext } from 'react';
+import createComment from '../../services/createComment'
+import { NewCommentaryContext } from '../../hooks/NewCommentaryContext'
 
 import styles from './styles.module.css'
 
 export default function LeaveYourComment({postId}){
 
+    const { newCommentaryState, setNewCommentaryState } = useContext(NewCommentaryContext)
+
     const { user, loginWithRedirect } = useAuth0();
 
     const [ comment, setComment ] = useState("");
-
-    const [ comentaries, setCommentaries ] = useState(null);
-
-    useEffect(()=>{
-        getCommentaries(postId)
-        .then(result => setCommentaries(result))
-    }, []);
 
     async function handlerComment() {
         const data = {
@@ -26,7 +21,12 @@ export default function LeaveYourComment({postId}){
             postId: postId,
         }
 
-        const state = await createCommentary(data);
+        const state = await createComment(data);
+
+        if(state == true){
+            setComment("");
+            setNewCommentaryState(true);
+        }
     }
 
     return user ? (
@@ -36,7 +36,7 @@ export default function LeaveYourComment({postId}){
                 {user.given_name ? <span>{user.given_name}</span> : <span>{user.nickname}</span>}
             </div>
             <div className={styles.LeaveYourCommentContainer}>
-                <textarea id="CommentInput" placeholder='Add a comment' onChange={({target})=> setComment(target.value)} />
+                <textarea id="CommentInput" placeholder='Add a comment' value={comment} onChange={({target})=> setComment(target.value)} />
                 <button onClick={handlerComment}>Post</button>
             </div>
         </div>

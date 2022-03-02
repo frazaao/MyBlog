@@ -2,6 +2,8 @@ import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
 import AuthorProfile from '../AuthorProfile'
 import LeaveYourComment from '../LeaveYourComment';
+import CommentsSection from '../CommentsSection';
+import { NewCommentaryState } from '../../hooks/NewCommentaryContext'
 
 export default function SinglePost({data, isSinglePage}){
 
@@ -15,13 +17,17 @@ export default function SinglePost({data, isSinglePage}){
             {isSinglePage && <AuthorProfile author={data.author} postCreatedAt={data.createdAt} />}
 
             <div className={isSinglePage ? styles.singleText : styles.textContainer}>
-                <div className={!isSinglePage ? styles.textContent : undefined} dangerouslySetInnerHTML={{ __html: data.content.html }} ></div>
+                <div className={!isSinglePage ? styles.textContent : styles.singleText} dangerouslySetInnerHTML={{ __html: data.content.html }} ></div>
             </div>
-            <div className={isSinglePage ? styles.disabled : styles.callButton}>
+            {!isSinglePage && 
+            <div className={styles.callButton}>
                 <Link to={`/blog/${data.slug}`} >See more</Link>
-            </div>
-
-            {isSinglePage && <LeaveYourComment postId={data.id} />}
+            </div>}
+            
+            <NewCommentaryState>
+                {isSinglePage && <LeaveYourComment postId={data.id} />}
+                {isSinglePage && <CommentsSection postId={data.id} />}
+            </NewCommentaryState>
             
         </div>        
     )
