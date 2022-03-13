@@ -8,6 +8,7 @@
 
     background: var(--white);
     opacity: 0;
+    transition: all .3s ease-in-out;
 }
 
 @keyframes showOnScreen{
