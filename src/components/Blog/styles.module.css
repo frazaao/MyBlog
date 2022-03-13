@@ -7,6 +7,26 @@
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
 
     background: var(--white);
+    opacity: 0;
+}
+
+@keyframes showOnScreen{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blogContainer{
+    animation-name: showOnScreen;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
 }
 
 .blogContainer h2{
