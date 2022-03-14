@@ -1,7 +1,13 @@
 .heroContainer{
     max-width: 1100px;
     margin: 0 auto;
-    opacity: 0;
+    opacity: 1;
+
+    animation-name: showOnScreen;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 0) 0s;
+    animation-delay: .0s;
+    animation-fill-mode: initial;
 }
 
 @keyframes showOnScreen{
@@ -13,14 +19,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.heroContainer{
-    animation-name: showOnScreen;
-    animation-duration: 0.3s;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-    animation-delay: .3s;
-    animation-fill-mode: forwards;
 }
 
 .heroContent{

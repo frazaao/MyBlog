@@ -92,3 +92,13 @@
 .LeaveYourCommentContainer button:disabled:hover{
     background: var(--grey);
 }
+
+@media (max-width: 750px){
+    .CommentSession{
+        gap: 0;
+    }
+
+    .profileContent{
+        display: none;
+    }
+}

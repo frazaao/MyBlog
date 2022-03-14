@@ -38,9 +38,34 @@
 .commentaryProfile span + span{
     color: var(--grey);
     font-size: 0.75rem;
+    text-align: center;
 }
 
 .commentaryContent{
     flex: 1;
     padding: 15px;
+}
+
+@media (max-width: 750px){
+    .commentaryItem{
+        padding: 5px 10px;
+        max-width: 90%;
+        padding: 10px 0;
+    }
+
+    .commentaryProfile span{
+        font-size: 0.6rem;
+        max-width: 60%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .commentaryProfile {
+        max-width: 50%;
+    }
+
+    .commentaryContent{
+        font-size: 0.75rem;
+        padding: 5px;
+    }
 }
