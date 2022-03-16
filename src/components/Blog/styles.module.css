@@ -23,7 +23,7 @@
 
 .blogContainer{
     animation-name: showOnScreen;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
     animation-delay: .0s;
     animation-fill-mode: initial;
