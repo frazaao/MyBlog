@@ -1,4 +1,4 @@
-# 👾 GeekPlace
+# 👾 [GeekPlace](https://geekplace.vercel.app/)
 
 <h2 align="center">
     <img src="./src/assets/geekplace.svg" alt="Logo GeekPlace">
